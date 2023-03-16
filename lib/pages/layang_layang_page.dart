@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -74,8 +76,11 @@ class _LayangLayangPageState extends State<LayangLayangPage> {
               double diagonal1 = double.parse(diagonal1Controller.text);
               double diagonal2 = double.parse(diagonal2Controller.text);
 
-              double luas = diagonal1 * diagonal2 / 2;
-              double keliling = 2 * (diagonal1 + diagonal2);
+              double luas = diagonal1 * diagonal2 * 0.5;
+
+              double keliling = (sqrt((diagonal1 * diagonal1 / 4) +
+                      (diagonal2 * diagonal2 / 4)) *
+                  2);
 
               _hasilLuas = luas.toString();
               _hasilKeliling = keliling.toString();
